@@ -1,0 +1,10 @@
+# Global
+*/bin
+*/dist
+
+# C only
+c/swapmerge.elf
+c/swapmerge.exe
+
+# Python only
+python/__pycache__
