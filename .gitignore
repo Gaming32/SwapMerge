@@ -8,3 +8,7 @@ c/swapmerge.exe
 
 # Python only
 python/__pycache__
+
+# C# only
+c#/SwapMerge/bin
+c#/SwapMerge/obj
