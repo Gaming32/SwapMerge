@@ -39,7 +39,7 @@ namespace SwapMerge
         }
     }
 
-    public static class SwapMergeSort<T> where T : IComparable<T> {
+    static class SwapMergeSortInternal<T> where T : IComparable<T> {
         private static void MoveDown(T[] array, int start, int dest) {
             for (int i = dest; i < start; i++) {
                 Util<T>.SwapIndices(array, i, start);
@@ -66,7 +66,7 @@ namespace SwapMerge
             }
         }
 
-        private static void MergeRun(T[] array, int start, int mid, int end) {
+        public static void MergeRun(T[] array, int start, int mid, int end) {
             if(start == mid) return;
 
             MergeRun(array, start, (mid+start)/2, mid);
@@ -82,8 +82,10 @@ namespace SwapMerge
                 Merge(array, start, mid, end);
             }
         }
+    }
 
-        public static void SwapMerge(T[] array) {
+    public static class SwapMergeSort {
+        public static void Sort<T>(T[] array) where T : IComparable<T> {
             if (array.Length < 32) {
                 Util<T>.BinaryInsertSort(array, 0, array.Length);
                 return;
@@ -93,7 +95,7 @@ namespace SwapMerge
             int end = array.Length;
             int mid = start + ((end - start) / 2);
 
-            MergeRun(array, start, mid, end);
+            SwapMergeSortInternal<T>.MergeRun(array, start, mid, end);
         }
     }
 }

@@ -57,7 +57,7 @@ def _mergeRun(array, start, mid, end, length):
         _merge(array, start, mid, end)
 
 
-def swapmergesort(array):
+def sort(array):
     length = len(array)
 
     if length < 32 :
@@ -78,6 +78,6 @@ if __name__ == '__main__':
     random.shuffle(l)
     # print(l)
     import cProfile
-    cProfile.run('swapmergesort(l)')
+    cProfile.run('sort(l)')
     # swapmergesort(l)
     # print(l)

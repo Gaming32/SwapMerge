@@ -26,5 +26,5 @@ PrintArray(array);
 ShuffleArray(array);
 PrintArray(array);
 
-SwapMergeSort<int>.SwapMerge(array);
+SwapMergeSort.Sort(array);
 PrintArray(array);
