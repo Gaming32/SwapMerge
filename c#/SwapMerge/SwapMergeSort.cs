@@ -84,7 +84,16 @@ namespace SwapMerge
         }
     }
 
+    /// <summary>
+    ///     SwapMergeSort is an in-place variant of Binary Merge Sort.
+    ///     Class containing generic <c>Sort&lt;T&gt;</c> method
+    /// </summary>
     public static class SwapMergeSort {
+        /// <summary>
+        ///     Generic method to sort arrays of any type using SwapMergeSort
+        /// </summary>
+        /// <typeparam name="T">The type of the array elements. Must derive from <c>IComparable&lt;T&gt;</c></typeparam>
+        /// <param name="array">The array to sort</param>
         public static void Sort<T>(T[] array) where T : IComparable<T> {
             if (array.Length < 32) {
                 Util<T>.BinaryInsertSort(array, 0, array.Length);

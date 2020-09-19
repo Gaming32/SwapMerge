@@ -1,3 +1,7 @@
+"""SwapMergeSort is an in-place variant of Binary Merge Sort.
+Module containing `sort` function"""
+
+
 def _binaryInsertSort(array, start, end):
     for i in range(start, end):
         num = array[i]
@@ -58,6 +62,7 @@ def _mergeRun(array, start, mid, end, length):
 
 
 def sort(array):
+    "Sort array using SwapMergeSort"
     length = len(array)
 
     if length < 32 :
